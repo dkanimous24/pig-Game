@@ -1,2 +1,2 @@
 # pig-Game
-a game that made from JS ,HTML and CSS
+A game's that made from JS ,HTML and CSS
