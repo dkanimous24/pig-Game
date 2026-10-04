@@ -10,7 +10,6 @@ dotenv.config();
 const app = express();
 const server = http.createServer(app);
 const port = process.env.PORT || 5000;
-// comma-separated, so one value can allow both local dev and the deployed site
 const origins = (process.env.CLIENT_URL || "http://localhost:5500").split(",");
 
 const io = new Server(server, {
