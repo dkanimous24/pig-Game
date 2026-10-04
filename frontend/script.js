@@ -1,7 +1,10 @@
 'use strict';
 
 // Point this at the backend (same value as the server's PORT / deployed URL).
-const SERVER_URL = 'http://localhost:5000';
+const SERVER_URL =
+  location.hostname === 'localhost' || location.hostname === '127.0.0.1'
+    ? 'http://localhost:5000'
+    : 'https://YOUR-SERVICE-NAME.onrender.com';
 const socket = io(SERVER_URL);
 
 // ---------- elements ----------
@@ -176,7 +179,7 @@ socket.on('game:winner', ({ winnerSeat, reason }) => {
     mustLeave = true;
     setStatus('Opponent left. You win!');
   } else {
-    setStatus(iWon ? 'You win!' : 'Opponent wins.');
+    setStatus(iWon ? 'You win! ' : 'Opponent wins.');
   }
   renderControls();
 });
