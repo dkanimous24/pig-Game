@@ -1,2 +1,2 @@
 # pig-Game
-A game's that made from JS ,HTML and CSS
+a dice game that two people can play and race to a 100 points by rolling the dice ,whatever the dice roll and accepted by will be add to score them and with each dice roll the initial score is added as many times as the player rolls ,but the caveat is that whenever a player gets 1 they loose all the points racked up during their turn and it automatically switched to next player they will take turns like this until some reach 100 first
