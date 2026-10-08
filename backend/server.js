@@ -10,7 +10,9 @@ dotenv.config();
 const app = express();
 const server = http.createServer(app);
 const port = process.env.PORT || 5000;
-const origins = (process.env.CLIENT_URL || "http://localhost:5500").split(",");
+const origins = (process.env.CLIENT_URL || "http://localhost:5500")
+  .split(",")
+  .map((origin) => origin.trim().replace(/\/$/, ""));
 
 const io = new Server(server, {
   cors: { origin: origins, methods: ["GET", "POST"], credentials: true },
